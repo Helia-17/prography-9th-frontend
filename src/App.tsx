@@ -1,7 +1,11 @@
+import FoodList from './components/FoodList'
+import SideBar from './components/SideBar'
+
 function App() {
   return (
     <>
-      <p>Hello Prography!</p>
+      <SideBar />
+      <FoodList />
     </>
   )
 }
