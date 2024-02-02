@@ -1,8 +1,10 @@
+import Wrapper from './style'
+
 const SideBar = () => {
   return (
-    <div>
-      <img src="src/assets/prography_logo.png" />
-    </div>
+    <Wrapper>
+      <img className="logo" src="public/prography_logo.png" />
+    </Wrapper>
   )
 }
 
