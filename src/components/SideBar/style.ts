@@ -1,14 +1,14 @@
 import styled from 'styled-components'
 
-const Wrapper = styled.div<{ $isMobile: boolean; isFold: boolean }>`
+const Wrapper = styled.div<{ $isMobile: boolean; $isFold: boolean }>`
   width: 16rem;
   border-right: 1px solid #cccccc;
   flex-shrink: 0;
   overflow: hidden;
   transition: transform 500ms cubic-bezier(0.4, 0, 0.2, 1);
 
-  ${({ isFold }) => {
-    if (isFold) {
+  ${({ $isFold }) => {
+    if ($isFold) {
       return `transform: translateX(-14.5rem);`
     }
   }}
