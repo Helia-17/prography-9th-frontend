@@ -24,26 +24,30 @@ const Header = ({
 
   return (
     <Wrapper isMobile={isMobile}>
-      <div>
+      <div className="sort-container">
         <span>Order by</span>
-        <button
-          className={`btn-sort ${sortType === SORT_TYPE.NEW ? 'active' : ''}`}
-          onClick={() => onClick(SORT_TYPE.NEW)}
-        >
-          latest
-        </button>
-        <button
-          className={`btn-sort ${sortType === SORT_TYPE.ASC ? 'active' : ''}`}
-          onClick={() => onClick(SORT_TYPE.ASC)}
-        >
-          ascending
-        </button>
-        <button
-          className={`btn-sort ${sortType === SORT_TYPE.DESC ? 'active' : ''}`}
-          onClick={() => onClick(SORT_TYPE.DESC)}
-        >
-          descending
-        </button>
+        <div className="sort-btn-container">
+          <button
+            className={`btn-sort ${sortType === SORT_TYPE.NEW ? 'active' : ''}`}
+            onClick={() => onClick(SORT_TYPE.NEW)}
+          >
+            latest
+          </button>
+          <button
+            className={`btn-sort ${sortType === SORT_TYPE.ASC ? 'active' : ''}`}
+            onClick={() => onClick(SORT_TYPE.ASC)}
+          >
+            ascending
+          </button>
+          <button
+            className={`btn-sort ${
+              sortType === SORT_TYPE.DESC ? 'active' : ''
+            }`}
+            onClick={() => onClick(SORT_TYPE.DESC)}
+          >
+            descending
+          </button>
+        </div>
       </div>
       <div className="view-container">
         <button

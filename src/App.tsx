@@ -13,6 +13,7 @@ function App() {
   const [showFoodList, setShowFoodList] = useState<Food[]>([])
   const [page, setPage] = useState(1)
   const [isMobile, setIsMobile] = useState(false)
+  const [isFold, setisFold] = useState(false)
 
   const getFoodList = async () => {
     setPage(1)
@@ -75,11 +76,15 @@ function App() {
         selectedCategoryList={selectedCategoryList}
         clickCategory={clickCategory}
         foodListCount={[showFoodList.length, foodList.length]}
+        isMobile={isMobile}
+        isFold={isFold}
+        setisFold={setisFold}
       />
       <FoodList
         foodList={showFoodList}
         sortFoodList={sortFoodList}
         isMobile={isMobile}
+        isFold={isFold}
       />
     </Wrapper>
   )

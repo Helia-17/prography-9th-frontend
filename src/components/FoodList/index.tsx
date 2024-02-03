@@ -9,10 +9,12 @@ const FoodList = ({
   foodList,
   sortFoodList,
   isMobile,
+  isFold,
 }: {
   foodList: Food[]
   sortFoodList: (type: SORT_TYPE) => void
   isMobile: boolean
+  isFold: boolean
 }) => {
   const [view, setView] = useState<VIEW_TYPE>(VIEW_TYPE.GRID)
 
@@ -23,7 +25,7 @@ const FoodList = ({
   }, [isMobile])
 
   return (
-    <Wrapper view={view}>
+    <Wrapper view={view} isFold={isFold}>
       <Header
         sortFoodList={sortFoodList}
         view={view}

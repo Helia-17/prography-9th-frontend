@@ -5,6 +5,7 @@ const Wrapper = styled.div`
   padding: 2rem;
   display: flex;
   gap: 3rem;
+  font-style: italic;
 `
 
 export default Wrapper

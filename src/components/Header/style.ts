@@ -4,14 +4,22 @@ const Wrapper = styled.div<{ isMobile: boolean }>`
   width: 100%;
   display: flex;
   justify-content: space-between;
+  .sort-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: end;
+    span {
+      margin-right: 0.3rem;
+    }
+  }
+  .sort-btn-container {
+    width: 15rem;
+  }
   .btn-sort {
     background-color: transparent;
     border: none;
     cursor: pointer;
     color: #cccccc;
-    &:first-of-type {
-      margin-left: 0.3rem;
-    }
     &:hover {
       color: #ffc0cb;
     }
