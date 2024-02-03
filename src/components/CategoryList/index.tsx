@@ -15,7 +15,7 @@ const CategoryItem = ({
   }
 
   return (
-    <ItemWrapper active={active}>
+    <ItemWrapper $active={active}>
       <button onClick={onClick}>{category.strCategory}</button>
       <span className="category-circle"></span>
     </ItemWrapper>
@@ -40,11 +40,16 @@ const CategoryList = ({
               category={category}
               clickCategory={clickCategory}
               active={true}
+              key={category.idCategory}
             />
           )
         } else
           return (
-            <CategoryItem category={category} clickCategory={clickCategory} />
+            <CategoryItem
+              category={category}
+              clickCategory={clickCategory}
+              key={category.idCategory}
+            />
           )
       })}
     </Wrapper>

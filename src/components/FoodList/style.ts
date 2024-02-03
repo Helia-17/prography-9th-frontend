@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import { VIEW_TYPE } from '../../enum'
 
-const Wrapper = styled.div<{ view: VIEW_TYPE; $isFold: boolean }>`
+const Wrapper = styled.div<{ $view: VIEW_TYPE; $isFold: boolean }>`
   width: 100%;
   transition: transform 500ms cubic-bezier(0.4, 0, 0.2, 1);
 
@@ -10,8 +10,8 @@ const Wrapper = styled.div<{ view: VIEW_TYPE; $isFold: boolean }>`
     flex-wrap: wrap;
   }
 
-  ${({ view }) => {
-    if (view === VIEW_TYPE.GRID) {
+  ${({ $view }) => {
+    if ($view === VIEW_TYPE.GRID) {
       return `
         .food-item {
           flex: 0 0 25%;

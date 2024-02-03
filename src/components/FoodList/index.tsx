@@ -82,7 +82,7 @@ const FoodList = ({
   }, [isMobile])
 
   return (
-    <Wrapper view={view} $isFold={isFold}>
+    <Wrapper $view={view} $isFold={isFold}>
       <Header
         sortFoodList={sortFoodList}
         view={view}

@@ -6,7 +6,7 @@ const Wrapper = styled.div`
   gap: 0.5rem;
 `
 
-const ItemWrapper = styled.div<{ active: boolean }>`
+const ItemWrapper = styled.div<{ $active: boolean }>`
   button {
     background-color: transparent;
     color: #000000;
@@ -33,7 +33,7 @@ const ItemWrapper = styled.div<{ active: boolean }>`
     height: 0.3rem;
     margin-bottom: 0.1rem;
     background-color: #cccccc;
-    ${props => (props.active ? 'background-color: #FF2557;' : '')}
+    ${props => (props.$active ? 'background-color: #FF2557;' : '')}
   }
 `
 export { Wrapper, ItemWrapper }
