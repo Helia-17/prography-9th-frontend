@@ -4,6 +4,9 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+`
+
+const ItemWrapper = styled.div<{ active: boolean }>`
   button {
     background-color: transparent;
     color: #000000;
@@ -13,6 +16,24 @@ const Wrapper = styled.div`
     text-align: start;
     cursor: pointer;
   }
-`
+  button:hover {
+    + .category-circle {
+      background-color: #ff2557;
+    }
+    text-decoration: underline;
+    text-decoration-color: #ff6783;
+    text-underline-offset: 0.3rem;
+  }
 
-export default Wrapper
+  .category-circle {
+    vertical-align: middle;
+    display: inline-block;
+    border-radius: 50%;
+    width: 0.3rem;
+    height: 0.3rem;
+    margin-bottom: 0.1rem;
+    background-color: #cccccc;
+    ${props => (props.active ? 'background-color: #FF2557;' : '')}
+  }
+`
+export { Wrapper, ItemWrapper }

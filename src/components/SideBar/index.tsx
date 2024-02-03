@@ -6,8 +6,10 @@ import CategoryList from '../CategoryList'
 
 const SideBar = ({
   clickCategory,
+  selectedCategoryList,
 }: {
   clickCategory: (category: string) => void
+  selectedCategoryList: string[]
 }) => {
   const [categoryList, setCategoryList] = useState([])
   const getCategoryList = async () => {
@@ -21,7 +23,11 @@ const SideBar = ({
   return (
     <Wrapper>
       <img className="logo" src="/prography_logo.png" />
-      <CategoryList categoryList={categoryList} clickCategory={clickCategory} />
+      <CategoryList
+        categoryList={categoryList}
+        clickCategory={clickCategory}
+        selectedCategoryList={selectedCategoryList}
+      />
     </Wrapper>
   )
 }

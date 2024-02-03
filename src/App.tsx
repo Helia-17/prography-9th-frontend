@@ -37,7 +37,10 @@ function App() {
   }, [selectedCategoryList])
   return (
     <Wrapper>
-      <SideBar clickCategory={clickCategory} />
+      <SideBar
+        selectedCategoryList={selectedCategoryList}
+        clickCategory={clickCategory}
+      />
       <FoodList foodList={foodList} />
     </Wrapper>
   )
