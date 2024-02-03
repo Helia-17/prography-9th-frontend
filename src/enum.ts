@@ -3,3 +3,8 @@ export const enum SORT_TYPE {
   ASC = 'asc',
   DESC = 'desc',
 }
+
+export const enum VIEW_TYPE {
+  GRID = 'grid',
+  COLUMN = 'column',
+}
