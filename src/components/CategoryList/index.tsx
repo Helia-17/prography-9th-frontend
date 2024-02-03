@@ -2,27 +2,27 @@ import { Category } from '../../types'
 
 const CategoryItem = ({
   category,
-  setCategory,
+  clickCategory,
 }: {
   category: Category
-  setCategory: React.Dispatch<React.SetStateAction<string>>
+  clickCategory: (category: string) => void
 }) => {
   const onClick = () => {
-    setCategory(category.strCategory)
+    clickCategory(category.strCategory)
   }
   return <button onClick={onClick}>{category.strCategory}</button>
 }
 const CategoryList = ({
   categoryList,
-  setCategory,
+  clickCategory,
 }: {
   categoryList: Category[]
-  setCategory: React.Dispatch<React.SetStateAction<string>>
+  clickCategory: (category: string) => void
 }) => {
   return (
     <div>
       {categoryList.map(category => (
-        <CategoryItem category={category} setCategory={setCategory} />
+        <CategoryItem category={category} clickCategory={clickCategory} />
       ))}
     </div>
   )

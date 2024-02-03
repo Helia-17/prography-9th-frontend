@@ -5,9 +5,9 @@ import { fetchCategoryList } from '../../api'
 import CategoryList from '../CategoryList'
 
 const SideBar = ({
-  setCategory,
+  clickCategory,
 }: {
-  setCategory: React.Dispatch<React.SetStateAction<string>>
+  clickCategory: (category: string) => void
 }) => {
   const [categoryList, setCategoryList] = useState([])
   const getCategoryList = async () => {
@@ -21,7 +21,7 @@ const SideBar = ({
   return (
     <Wrapper>
       <img className="logo" src="/prography_logo.png" />
-      <CategoryList categoryList={categoryList} setCategory={setCategory} />
+      <CategoryList categoryList={categoryList} clickCategory={clickCategory} />
     </Wrapper>
   )
 }
