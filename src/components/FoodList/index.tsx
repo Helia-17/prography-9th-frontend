@@ -1,10 +1,13 @@
+import { Food } from '../../types'
 import FoodItem from './FoodItem'
 
-const FoodList = () => {
+const FoodList = ({ foodList }: { foodList: Food[] }) => {
   return (
-    <div>
-      <FoodItem />
-    </div>
+    <>
+      {foodList.map(food => (
+        <FoodItem food={food} />
+      ))}
+    </>
   )
 }
 
