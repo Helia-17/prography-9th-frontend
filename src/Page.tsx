@@ -15,11 +15,13 @@ const Page = () => {
   const [page, setPage] = useState(1)
   const [isMobile, setIsMobile] = useState(false)
   const [isFold, setisFold] = useState(false)
+  const [isInfiniteScroll, setIsInfiniteScroll] = useState(false)
 
   const [searchParams, setSearchParams] = useSearchParams()
   const navigate = useNavigate()
 
   const getFoodList = async () => {
+    setIsInfiniteScroll(false)
     setPage(1)
     setFoodList([])
     setShowFoodList([])
@@ -112,6 +114,14 @@ const Page = () => {
     checkIsMobile()
   }, [window.navigator.userAgent])
 
+  useEffect(() => {
+    setShowFoodList(foodList.slice(0, page * 20))
+  }, [page])
+
+  useEffect(() => {
+    if (foodList.length > 20) setIsInfiniteScroll(true)
+  }, [foodList])
+
   return (
     <Wrapper>
       <SideBar
@@ -123,10 +133,14 @@ const Page = () => {
         setisFold={setisFold}
       />
       <FoodList
-        foodList={showFoodList}
+        showFoodList={showFoodList}
+        foodList={foodList}
         sortFoodList={sortFoodList}
         isMobile={isMobile}
         isFold={isFold}
+        setPage={setPage}
+        isInfiniteScroll={isInfiniteScroll}
+        setIsInfiniteScroll={setIsInfiniteScroll}
       />
     </Wrapper>
   )
