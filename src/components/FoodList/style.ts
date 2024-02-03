@@ -17,11 +17,18 @@ const Wrapper = styled.div<{ view: VIEW_TYPE }>`
           max-width: 25%;
         }
       `
-    } else {
+    } else if (view === VIEW_TYPE.COLUMN) {
       return `
         .food-item {
           flex: 0 0 50%;
           max-width: 50%;
+        }
+      `
+    } else {
+      return `
+        .food-item {
+          flex: 0 0 100%;
+          max-width: 100%;
         }
       `
     }

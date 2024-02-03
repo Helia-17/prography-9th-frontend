@@ -5,12 +5,14 @@ import Wrapper from './style'
 import { fetchFoodList } from './api'
 import { Food } from './types'
 import { SORT_TYPE } from './enum'
+import { detectMobileDevice } from './utils'
 
 function App() {
   const [selectedCategoryList, setSelectedCategoryList] = useState<string[]>([])
   const [foodList, setFoodList] = useState<Food[]>([])
   const [showFoodList, setShowFoodList] = useState<Food[]>([])
   const [page, setPage] = useState(1)
+  const [isMobile, setIsMobile] = useState(false)
 
   const getFoodList = async () => {
     setPage(1)
@@ -54,9 +56,18 @@ function App() {
     setShowFoodList(newFoodList.slice(0, page * 20))
   }
 
+  const checkIsMobile = () => {
+    const isMobile = detectMobileDevice(window.navigator.userAgent)
+    setIsMobile(isMobile)
+  }
+
   useEffect(() => {
     getFoodList()
   }, [selectedCategoryList])
+
+  useEffect(() => {
+    checkIsMobile()
+  }, [window.navigator.userAgent])
 
   return (
     <Wrapper>
@@ -65,7 +76,11 @@ function App() {
         clickCategory={clickCategory}
         foodListCount={[showFoodList.length, foodList.length]}
       />
-      <FoodList foodList={showFoodList} sortFoodList={sortFoodList} />
+      <FoodList
+        foodList={showFoodList}
+        sortFoodList={sortFoodList}
+        isMobile={isMobile}
+      />
     </Wrapper>
   )
 }

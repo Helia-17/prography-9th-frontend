@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-const Wrapper = styled.div`
+const Wrapper = styled.div<{ isMobile: boolean }>`
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -18,6 +18,20 @@ const Wrapper = styled.div`
     &.active {
       color: #ff6783;
     }
+  }
+  .view-container {
+    ${({ isMobile }) => {
+      if (isMobile) {
+        return `
+          display: none;
+        `
+      } else {
+        return `
+          display: flex;
+          align-items: center;
+        `
+      }
+    }}
   }
   .btn-view {
     position: relative;

@@ -8,10 +8,12 @@ const Header = ({
   sortFoodList,
   view,
   setView,
+  isMobile,
 }: {
   sortFoodList: (type: SORT_TYPE) => void
   view: VIEW_TYPE
   setView: (type: VIEW_TYPE) => void
+  isMobile: boolean
 }) => {
   const [sortType, setSortType] = useState<SORT_TYPE>(SORT_TYPE.ASC)
 
@@ -21,7 +23,7 @@ const Header = ({
   }
 
   return (
-    <Wrapper>
+    <Wrapper isMobile={isMobile}>
       <div>
         <span>Order by</span>
         <button

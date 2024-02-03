@@ -7,4 +7,5 @@ export const enum SORT_TYPE {
 export const enum VIEW_TYPE {
   GRID = 'grid',
   COLUMN = 'column',
+  LIST = 'list',
 }
