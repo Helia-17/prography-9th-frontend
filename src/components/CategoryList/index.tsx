@@ -1,4 +1,5 @@
 import { Category } from '../../types'
+import Wrapper from './style'
 
 const CategoryItem = ({
   category,
@@ -10,8 +11,13 @@ const CategoryItem = ({
   const onClick = () => {
     clickCategory(category.strCategory)
   }
-  return <button onClick={onClick}>{category.strCategory}</button>
+  return (
+    <div>
+      <button onClick={onClick}>{category.strCategory}</button>
+    </div>
+  )
 }
+
 const CategoryList = ({
   categoryList,
   clickCategory,
@@ -20,11 +26,11 @@ const CategoryList = ({
   clickCategory: (category: string) => void
 }) => {
   return (
-    <div>
+    <Wrapper>
       {categoryList.map(category => (
         <CategoryItem category={category} clickCategory={clickCategory} />
       ))}
-    </div>
+    </Wrapper>
   )
 }
 
