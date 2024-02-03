@@ -5,10 +5,23 @@ const Wrapper = styled.div`
   border-right: 1px solid #cccccc;
   flex-shrink: 0;
 
+  .header {
+    margin: 1rem 1.5rem 4.4rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
   .logo {
-    margin: 1rem;
     width: 8rem;
-    margin-bottom: 4.4rem;
+  }
+
+  .food-list-count {
+    font-size: 0.8rem;
+    color: #2c2c2c;
+    span {
+      color: #ff2557;
+    }
   }
 `
 

@@ -8,9 +8,13 @@ import { Food } from './types'
 function App() {
   const [selectedCategoryList, setSelectedCategoryList] = useState<string[]>([])
   const [foodList, setFoodList] = useState<Food[]>([])
+  const [showFoodList, setShowFoodList] = useState<Food[]>([])
+  const [page, setPage] = useState(1)
 
   const getFoodList = async () => {
+    setPage(1)
     setFoodList([])
+    setShowFoodList([])
     if (selectedCategoryList.length === 0) return
     const newFoodList = []
     for (const category of selectedCategoryList) {
@@ -18,6 +22,7 @@ function App() {
       newFoodList.push(...foods)
     }
     setFoodList(newFoodList)
+    setShowFoodList(newFoodList.slice(0, page * 20))
   }
 
   const clickCategory = (category: string) => {
@@ -40,8 +45,9 @@ function App() {
       <SideBar
         selectedCategoryList={selectedCategoryList}
         clickCategory={clickCategory}
+        foodListCount={[showFoodList.length, foodList.length]}
       />
-      <FoodList foodList={foodList} />
+      <FoodList foodList={showFoodList} />
     </Wrapper>
   )
 }
