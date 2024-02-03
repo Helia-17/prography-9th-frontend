@@ -1,30 +1,25 @@
-# React + TypeScript + Vite
+# Prography 9th / FE 사전 과제
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### ✅ 구현 완료 사항 ✅
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+1. 전체 카테고리 조회 API를 호출해 카테고리 리스트(strCategory)를 노출합니다. ✅
+2. 카테고리를 클릭 시, 카테고리별 음식 조회 API를 호출해 해당하는 카테고리의 음식 목록을 보여줍니다.✅
+3. 선택한 카테고리와 선택하지 않은 카테고리의 스타일을 구분해주세요. (디자인은 자유롭게) ✅
+4. 카테고리는 **복수** **선택**이 가능하며, 클릭한 **모든 카테고리**에 대한 음식을 보여줍니다. 선택된 카테고리를 다시 클릭 시, 해당 카테고리에 대한 음식은 제외되어야 합니다. ✅
+5. 카드의 갯수가 **20개** 초과 시 **인피니트 스크롤**을 통해 데이터를 추가적으로 보여줍니다. 이때, 음식 목록에 대한 정보는 프론트 단에 저장하고 있습니다. ✅
+6. 각각의 썸네일 이미지는 **lazy loading**이 되어야 합니다. ✅
+7. 음식 목록에 대한 결과를 사용자가 지정한 레이아웃을 통해 보여줍니다. ✅
+   7-1. PC 버전 ✅
+   : 2개씩 보기 / 4개씩 보기 ✅
+   7-2. Mobile 버전 ✅
+   - 하나의 행에 **한 개**의 카드만 보여줍니다.✅
+   - [2개씩 보기 / 4개씩 보기]의 select 버튼이 사라집니다. (정렬 버튼은 사라지지 않음) ✅
+8. 음식에 대한 결과를 **필터링** 할 수 있습니다. ✅
+   8-1. 최신 등록순 ✅
+   8-2. 알파벳 오름차순 ✅
+   8-3. 알파벳 내림차순 ✅
+9. 쿼리스트링 - 필터링, 카테고리 선택 시 쿼리스트링을 저장합니다. ✅
+10. 이 외에 ux적으로 필요한 기능이 있으면 자유롭게 추가해주세요. ✅
+    10-1. 조회 중인 음식 개수 / 전체 음식 개수 표시 ✅
+    10-2. 파비콘 변경
+    10-3. 사이드바 접기 및 펴기 구현 ✅
