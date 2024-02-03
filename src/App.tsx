@@ -4,6 +4,8 @@ import SideBar from './components/SideBar'
 import Wrapper from './style'
 import { fetchFoodList } from './api'
 import { Food } from './types'
+import Header from './components/Header'
+import { SORT_TYPE } from './enum'
 
 function App() {
   const [selectedCategoryList, setSelectedCategoryList] = useState<string[]>([])
@@ -37,6 +39,23 @@ function App() {
     console.log(selectedCategoryList)
   }
 
+  const filterFoodList = (type: SORT_TYPE) => {
+    const newFoodList = foodList.sort((a, b) => {
+      switch (type) {
+        case SORT_TYPE.NEW:
+          return a.idMeal.localeCompare(b.idMeal)
+        case SORT_TYPE.ASC:
+          return a.strMeal.localeCompare(b.strMeal)
+        case SORT_TYPE.DESC:
+          return b.strMeal.localeCompare(a.strMeal)
+        default:
+          return a.idMeal.localeCompare(b.idMeal)
+      }
+    })
+    setFoodList(newFoodList)
+    setShowFoodList(newFoodList.slice(0, page * 20))
+  }
+
   useEffect(() => {
     getFoodList()
   }, [selectedCategoryList])
@@ -47,6 +66,7 @@ function App() {
         clickCategory={clickCategory}
         foodListCount={[showFoodList.length, foodList.length]}
       />
+      <Header filterFoodList={filterFoodList} />
       <FoodList foodList={showFoodList} />
     </Wrapper>
   )
