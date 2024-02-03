@@ -39,7 +39,7 @@ const CategoryList = ({
             <CategoryItem
               category={category}
               clickCategory={clickCategory}
-              active
+              active={true}
             />
           )
         } else

@@ -23,7 +23,7 @@ const Header = ({
   }
 
   return (
-    <Wrapper isMobile={isMobile}>
+    <Wrapper $isMobile={isMobile}>
       <div className="sort-container">
         <span>Order by</span>
         <div className="sort-btn-container">

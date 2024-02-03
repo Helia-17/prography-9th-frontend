@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-const Wrapper = styled.div<{ isMobile: boolean; isFold: boolean }>`
+const Wrapper = styled.div<{ $isMobile: boolean; isFold: boolean }>`
   width: 16rem;
   border-right: 1px solid #cccccc;
   flex-shrink: 0;
@@ -18,8 +18,8 @@ const Wrapper = styled.div<{ isMobile: boolean; isFold: boolean }>`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    ${({ isMobile }) => {
-      if (isMobile) {
+    ${({ $isMobile }) => {
+      if ($isMobile) {
         return `display: none;`
       }
     }}

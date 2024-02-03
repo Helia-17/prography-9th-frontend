@@ -42,7 +42,7 @@ const SideBar = ({
   }, [isMobile])
 
   return (
-    <Wrapper isMobile={isMobile} isFold={isFold}>
+    <Wrapper $isMobile={isMobile} isFold={isFold}>
       <div className="header">
         <img className="logo" src="/prography_logo.png" />
         <p className="food-list-count">

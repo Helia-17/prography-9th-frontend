@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-const Wrapper = styled.div<{ isMobile: boolean }>`
+const Wrapper = styled.div<{ $isMobile: boolean }>`
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -28,8 +28,8 @@ const Wrapper = styled.div<{ isMobile: boolean }>`
     }
   }
   .view-container {
-    ${({ isMobile }) => {
-      if (isMobile) {
+    ${({ $isMobile }) => {
+      if ($isMobile) {
         return `
           display: none;
         `
