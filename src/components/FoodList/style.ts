@@ -18,7 +18,7 @@ const Wrapper = styled.div<{ $view: VIEW_TYPE; $isFold: boolean }>`
           max-width: 25%;
         }
       `
-    } else if (view === VIEW_TYPE.COLUMN) {
+    } else if ($view === VIEW_TYPE.COLUMN) {
       return `
         .food-item {
           flex: 0 0 50%;
