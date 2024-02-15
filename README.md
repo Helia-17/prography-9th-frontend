@@ -1,5 +1,8 @@
 # Prography 9th / FE 사전 과제
 
+![image](https://github.com/Helia-17/prography-9th-frontend/assets/76979903/c1b1637e-19fe-4a86-b708-a54ae38c7bbc)
+
+
 ### ✅ 구현 완료 사항 ✅
 
 1. 전체 카테고리 조회 API를 호출해 카테고리 리스트(strCategory)를 노출합니다. ✅
